@@ -1,6 +1,6 @@
 # SqlExec
 
-![.NET Framework](https://github.com/iberisoft/SqlExec/workflows/.NET%20Framework/badge.svg)
+[![.NET](https://github.com/iberisoft/SqlExec/actions/workflows/dotnet.yml/badge.svg)](https://github.com/iberisoft/SqlExec/actions/workflows/dotnet.yml)
 
 This tool executes scripts in Microsoft SQL Server.
 
@@ -9,12 +9,11 @@ the file in CSV format.
 
 ## Configuration
 
-The tool is configured in file SqlExec.exe.config.
+The tool is configured in file `appsettings.json`.
 
 Database connection is defined below:
 ```
-    <connectionStrings>
-        <add name="SqlExec.Properties.Settings.ConnectionString" connectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=Ndt;Integrated Security=True"
-            providerName="System.Data.SqlClient" />
-    </connectionStrings>
+{
+  "ConnectionString": "Server=(local)\\SQLEXPRESS;Database=XPacs;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False"
+}
 ```
