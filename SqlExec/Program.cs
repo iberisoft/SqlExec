@@ -1,4 +1,4 @@
-﻿using SqlExec.Properties;
+﻿using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,8 +8,13 @@ namespace SqlExec
 {
     static class Program
     {
+        static Settings m_Settings;
+
         static void Main(string[] args)
         {
+            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            m_Settings = config.Get<Settings>();
+
             if (args.Length > 0 && File.Exists(args[0]))
             {
                 try
@@ -29,7 +34,7 @@ namespace SqlExec
 
         private static void RunScript(string scriptFilePath, string outputFilePath)
         {
-            using (var connection = new SqlConnection(Settings.Default.ConnectionString))
+            using (var connection = new SqlConnection(m_Settings.ConnectionString))
             {
                 connection.Open();
                 using (var command = connection.CreateCommand())
