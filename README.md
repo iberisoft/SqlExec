@@ -1,6 +1,6 @@
 # SqlExec
 
-[![.NET](https://github.com/iberisoft/SqlExec/actions/workflows/dotnet.yml/badge.svg)](https://github.com/iberisoft/SqlExec/actions/workflows/dotnet.yml)
+[![.NET Framework](https://github.com/iberisoft/SqlExec/actions/workflows/dotnet.yml/badge.svg)](https://github.com/iberisoft/SqlExec/actions/workflows/dotnet.yml)
 
 This tool executes scripts in Microsoft SQL Server.
 
