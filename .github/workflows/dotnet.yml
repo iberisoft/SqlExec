@@ -1,4 +1,4 @@
-name: .NET Framework
+name: .NET
 
 on: [push]
 
@@ -9,11 +9,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup Nuget.exe
-      uses: NuGet/setup-nuget@v1.0.5
-    - name: Restore packages
-      run: nuget restore SqlExec.sln
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v1
-    - name: Build with MSBuild
-      run: msbuild SqlExec.sln -p:Configuration=Release
+    - name: Build
+      run: dotnet build SqlExec.sln --configuration Release
